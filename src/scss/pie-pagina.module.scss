@@ -1,0 +1,151 @@
+// Base de colores:
+:root {
+	--color-1: #f2f5ff;
+	--color-2: #ffd004;
+	--color-3: #66b330;
+	--color-4: #252323;
+	--color-5: #662483;
+	--color-6: #e30613;
+	--color-7: #d5d0d0;
+}
+
+.PiePagina {
+	width: calc(95vw - 10px);
+	min-height: 25vh;
+
+	display: grid;
+	// tecnologia usada
+	.tecnologia_PiePagina {
+		width: 100%;
+		justify-self: center;
+		align-items: center;
+
+		display: grid;
+		// titulo
+		h1 {
+			color: var(--color-3);
+			justify-self: center;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 1vw;
+			margin-right: 0.5vw;
+			&::selection {
+				background: var(--color-6);
+				color: var(--color-1);
+			}
+		}
+		ul {
+			justify-self: center;
+
+			display: flex;
+			a {
+				background: linear-gradient(
+					90deg,
+					var(--color-4) 0%,
+					var(--color-4) 2%,
+					transparent 2%,
+					transparent 100%
+				);
+				width: max-content;
+				margin: 0 0.3vw;
+				border-radius: 3px;
+				box-shadow: inset 0 0 3px var(--color-4);
+				padding: 0.01vw 0.3vw;
+				padding-left: 0.3vw;
+				font-size: 1.5vw;
+				text-transform: capitalize;
+				align-items: center;
+
+				display: flex;
+				svg {
+					filter: drop-shadow(0 0 5px #ffffff40);
+				}
+				// subtitulo
+				p {
+					margin-left: 0.11vw;
+                    &::selection {
+                        background: var(--color-6);
+                        color: var(--color-1);
+                    }
+				}
+			}
+			.react_piePagina {
+				background: linear-gradient(90deg, #00befe 0%, #00befe 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #00befe;
+				box-shadow: inset 0 0 3px #00befe;
+			}
+			.js_piePagina {
+				background: linear-gradient(90deg, #e6af09 0%, #e6af09 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #e6af09;
+				box-shadow: inset 0 0 3px #e6af09;
+			}
+			.html5_piePagina {
+				background: linear-gradient(90deg, #ca6704 0%, #ca6704 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #ca6704;
+				box-shadow: inset 0 0 3px #ca6704;
+			}
+			.scss_piePagina {
+				background: linear-gradient(90deg, #fe00dc 0%, #fe00dc 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #fe00dc;
+				box-shadow: inset 0 0 3px #fe00dc;
+			}
+			.css3_piePagina {
+				background: linear-gradient(90deg, #0037fe 0%, #0037fe 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #0037fe;
+				box-shadow: inset 0 0 3px #0037fe;
+			}
+			.nodeJs_piePagina {
+				background: linear-gradient(90deg, #186206 0%, #186206 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #186206;
+				box-shadow: inset 0 0 3px #186206;
+			}
+			.vsCode_piePagina {
+				background: linear-gradient(90deg, #0155a4 0%, #0155a4 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #0155a4;
+				box-shadow: inset 0 0 3px #0155a4;
+			}
+			.photoshop_piePagina {
+				background: linear-gradient(90deg, #1d3d95 0%, #1d3d95 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #1d3d95;
+				box-shadow: inset 0 0 3px #1d3d95;
+			}
+			.illustrator_piePagina {
+				background: linear-gradient(90deg, #d07200 0%, #d07200 0.15vw, transparent 0.15vw, transparent 100%);
+				color: #d07200;
+				box-shadow: inset 0 0 3px #d07200;
+			}
+		}
+	}
+	// derechos de autor
+	.derechosAutor {
+		justify-self: center;
+		place-items: center;
+		align-self: flex-end;
+		transition: .3s;
+
+		display: flex;
+		flex-direction: column;
+		* {
+			&::selection {
+				background: #e30613;
+				color: var(--color-1);
+			}
+		}
+		span {
+			font-size: 1.2vw;
+			transition: .3s;
+
+			display: flex;
+			svg {
+				color: var(--color-3);
+			}
+			p {
+				color: var(--color-4);
+				margin-left: 0.3vw;
+				a {
+					color: var(--color-3);
+				}
+			}
+		}
+	}
+}

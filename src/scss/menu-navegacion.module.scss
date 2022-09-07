@@ -1,0 +1,302 @@
+// Base de colores:
+:root {
+	--color-1: #f2f5ff;
+	--color-2: #ffd004;
+	--color-3: #66b330;
+	--color-4: #252323;
+	--color-5: #662483;
+	--color-6: #e30613;
+	--color-7: #d5d0d0;
+}
+
+.menu_navegacion {
+	position: fixed;
+	width: 5vw;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	z-index: 2000;
+	transition: .3s;
+
+	display: grid;
+	&.activar_menuNavegacion {
+		width: 25vw;
+		.contenido_menuNavegacion {
+			width: 25vw;
+			// logo de la pagina, boton de cerrar el menu y el boton para el modo oscuro
+			.logo_btnCerrar_btnModoOscuro {
+				// logo de la pagina
+				.logo_menuNavegacion {
+					width: 5vw;
+					height: 3vw;
+					margin: 1vw;
+				}
+				// boton modo oscuro
+				.btnModoOscuro {
+					width: 5vw;
+					height: 2.7vw;
+					// interruptor
+					.interruptor_modoOscuro {
+						border: 0.05vw solid var(--color-4);
+						width: 2.2vw;
+						height: 2.2vw;
+					}
+					// logos
+					.iconoLuna,
+					.iconoSol {
+						font-size: 1.6vw;
+					}
+				}
+				// boton de abrir y cerrar
+				.boton_AbrirCerrar_menu {
+					span:nth-child(1) {
+						width: 100%;
+						transform-origin: left;
+						transform: rotate(43deg);
+					}
+					span:nth-child(2) {
+						opacity: 0;
+					}
+					span:nth-child(3) {
+						transform-origin: left;
+						transform: rotate(-43deg);
+						width: 100%;
+					}
+				}
+			}
+			// opciones
+			.opciones_menu {
+				.opcionMenu {
+					.lineaFinal {
+						width: 0.5vw;
+					}
+					p {
+						width: 12vw;
+						border-top: 1px solid var(--color-3);
+						border-bottom: 1px solid var(--color-3);
+						border-radius: 10px;
+						font-size: 2.2vw;
+					}
+				}
+				.opcionMenu:nth-child(1) {
+					p {
+						border-top: 1px solid var(--color-5);
+						border-bottom: 1px solid var(--color-5);
+					}
+				}
+			}
+			// redes
+			.redes_menu {
+				a:nth-child(1) {
+					transform: translateX(0);
+				}
+				a:nth-child(2) {
+					font-size: 3.5vw;
+				}
+				a:nth-child(3) {
+					font-size: 3.5vw;
+				}
+			}
+		}
+	}
+	// todo el contenido
+	.contenido_menuNavegacion {
+		position: relative;
+		background: var(--color-3);
+		box-shadow: 0 0 10px #252323;
+		justify-items: center;
+		align-content: space-between;
+		width: 5vw;
+		height: 100vh;
+
+		display: grid;
+		// logo de la pagina, boton de cerrar el menu y el boton para el modo oscuro
+		.logo_btnCerrar_btnModoOscuro {
+			background: var(--color-4);
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+			transition: .3s;
+
+			display: flex;
+			// logo
+			.logo_menuNavegacion {
+				background: var(--color-1);
+				box-shadow: inset 0 0 5px var(--color-4);
+				width: 0;
+				margin: 0;
+				padding: 0.2vw 0;
+				border-radius: 0.5vw;
+				place-items: center;
+				cursor: pointer;
+				transition: .3s;
+
+				display: grid;
+				img {
+					width: 50%;
+					pointer-events: none;
+					transition: .3s;
+				}
+			}
+			// boton modo oscuro
+			.btnModoOscuro {
+				position: relative;
+				background: var(--color-1);
+				box-shadow: inset 0 0 5px var(--color-4);
+				width: 0;
+				height: 0;
+				border-radius: 50px;
+				cursor: pointer;
+				transition: .3s;
+
+				display: flex;
+				&.activar_btnModoOscuro {
+					.interruptor_modoOscuro {
+						transform: translateX(calc(100%));
+					}
+				}
+				.interruptor_modoOscuro {
+					background: var(--color-3);
+					border: 0;
+					box-shadow: inset 0 0 5px #252323, inset 0 0 5px #252323;
+					align-self: center;
+					width: 0;
+					height: 0;
+					transform: translateX(calc(0% + 0.3vw));
+					border-radius: 50%;
+					transition: .3s;
+				}
+				// logos
+				.iconoLuna,
+				.iconoSol {
+					position: absolute;
+					color: var(--color-4);
+					font-size: 0;
+					transform: translateY(calc(50% - 0.25vw));
+				}
+				.iconoLuna {
+					left: .5vw;
+				}
+				.iconoSol {
+					right: .5vw;
+				}
+			}
+			// boton para abrir y cerrar
+			.boton_AbrirCerrar_menu {
+				width: 3vw;
+				height: 3vw;
+				margin: 1vw;
+				list-style: none;
+				cursor: pointer;
+				transition: .3s;
+
+				display: grid;
+				span {
+					background: var(--color-1);
+					height: 0.5vw;
+					place-self: flex-end;
+					border-radius: 10px;
+					z-index: 100;
+					transition: .3s;
+				}
+				span:nth-child(1) {
+					width: 1.5vw;
+				}
+				span:nth-child(2) {
+					width: 2.1vw;
+				}
+				span:nth-child(3) {
+					width: 3vw;
+				}
+			}
+		}
+		// opciones contenedor
+		.opciones_menu {
+			width: 90%;
+			height: 30vw;
+			align-content: space-around;
+			list-style: none;
+
+			display: grid;
+			// c/u de las opciones
+			.opcionMenu {
+				color: var(--color-3);
+				width: 100%;
+				height: 3.5vw;
+				border-radius: 5px;
+				font-size: 1.5rem;
+				background: var(--color-1);
+				justify-self: center;
+				justify-content: space-around;
+				align-items: center;
+				text-decoration: none;
+
+				display: flex;
+				hr {
+					width: .5vw;
+					height: 60%;
+					border-radius: 10px;
+					border: none;
+					background: var(--color-3);
+				}
+				.lineaFinal {
+					width: 0;
+				}
+				// logo
+				svg {
+					transform: translateX(0.5vw);
+					font-size: 2.5vw;
+				}
+				// subtitulo de la opcion
+				p {
+					width: 0;
+					text-align: center;
+					font-size: 0;
+					font-weight: 800;
+					&::selection {
+						background: var(--color-6);
+						color: var(--color-1);
+					}
+				}
+			}
+			.opcionMenu:nth-child(1) {
+				color: var(--color-5);
+				hr {
+					background: var(--color-5);
+				}
+			}
+		}
+		// redes
+		.redes_menu {
+			background: var(--color-4);
+			width: 100%;
+			padding: 0.5vw 0;
+			justify-content: space-around;
+			justify-items: center;
+			place-self: center;
+			align-items: center;
+			transition: .3s;
+
+			display: flex;
+			a {
+				color: var(--color-1);
+				font-size: 3.5vw;
+				transition: .3s;
+				place-items: center;
+				text-decoration: none;
+				cursor: pointer;
+
+				display: grid;
+			}
+			a:nth-child(1) {
+				transform: translateX(0.5vw);
+			}
+			a:nth-child(2) {
+				font-size: 0;
+			}
+			a:nth-child(3) {
+				font-size: 0;
+			}
+		}
+	}
+}

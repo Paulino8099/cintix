@@ -1,0 +1,63 @@
+// Base de colores:
+:root {
+	--color-1: #f2f5ff;
+	--color-2: #ffd004;
+	--color-3: #66b330;
+	--color-4: #252323;
+	--color-5: #662483;
+	--color-6: #e30613;
+	--color-7: #d5d0d0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	&::selection {
+		background: transparent;
+	}
+	transition: .3s;
+	a {
+		text-decoration: none;
+		color: var(--color-4);
+	}
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	position: relative;
+	background: var(--color-1);
+	transition: .3s;
+
+	display: grid;
+	&::-webkit-scrollbar {
+		background: var(--color-4);
+		box-shadow: inset 0 0 5px var(--color-1);
+		width: 10px;
+		transition: .5s;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--color-1);
+		box-shadow: inset 0 0 5px var(--color-4);
+		border-radius: 3px;
+	}
+	&.activar_body {
+		opacity: 0.5;
+	}
+	.fondo_oscuro {
+		position: fixed;
+		width: calc(95vw - 9px);
+		height: 100vh;
+		background: #252323de;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+		z-index: 10000;
+		transition: .5s;
+		&.activar_fondo_oscuro {
+			transition: 3s;
+			opacity: 1;
+		}
+	}
+}
