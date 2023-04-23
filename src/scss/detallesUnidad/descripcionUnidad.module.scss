@@ -1,0 +1,52 @@
+// Base de colores:
+:root {
+	--color-1: #f2f5ff;
+	--color-2: #ffd004;
+	--color-3: #66b330;
+	--color-4: #252323;
+	--color-5: #662483;
+	--color-6: #e30613;
+	--color-7: #d5d0d0;
+}
+
+// descripcion
+.descripcion_detallesUnidad {
+	background: var(--color-3);
+	width: 28%;
+	padding: 5px;
+	border-radius: 5px;
+	margin-left: 0.5vw;
+	align-self: center;
+	transition: .3s;
+	display: grid;
+	grid-column: 1/9;
+	grid-row: 2/9;
+	* {
+		&::selection {
+			background: var(--color-6);
+			color: var(--color-1);
+		}
+	}
+	// titulo
+	h3 {
+		color: var(--color-7);
+		transition: .3s;
+	}
+	hr {
+		background: var(--color-7);
+		width: 90%;
+		height: 2px;
+		justify-self: start;
+		border: none;
+		transition: .3s;
+	}
+	// parrafo
+	p {
+		color: var(--color-7);
+		margin-top: 1vw;
+		font-size: 1.4vw;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+			sans-serif;
+		transition: .3s;
+	}
+}
